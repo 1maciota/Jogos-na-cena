@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhores Jogos para Celulares Fracos - Santiago's</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #search {
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        .game-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .game-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        .game-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .game-item h3 {
+            font-size: 14px;
+            margin: 0;
+            color: #007bff;
+        }
+
+        .game-item p {
+            font-size: 12px;
+            color: #6c757d;
+            text-align: center;
+        }
+
+        .game-item a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .game-item a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Melhores Jogos para Celulares Fracos</h1>
+        <p>Por Santiago's</p>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="section">
+            <h2>Jogos Recomendados</h2>
+            <input type="text" id="search" placeholder="Pesquisar jogos...">
+            <div class="game-list" id="game-list"></div>
+        </section>
+        <section id="sobre" class="section">
+            <h2>Sobre</h2>
+            <p>Este blog é criado por Santiago's para compartilhar recomendações de jogos leves que rodam bem em celulares com especificações mais baixas.</p>
+        </section>
+        <section id="contato" class="section">
+            <h2>Contato</h2>
+            <form id="contact-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Santiago's. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        const games = [
+            { title: "Subway Surfers", description: "Um dos jogos mais populares com gráficos leves e jogabilidade viciante.", link: "https://play.google.com/store/apps/details?id=com.kiloo.subwaysurf", image: "https://play-lh.googleusercontent.com/q6cAfzI7cgBRgW8C-2Le7z5TyO3F0a1cZ9ax_m3P7NV0j2J6jI2cA4hKTLfLknsazP4" },
+            { title: "Alto's Adventure", description: "Um jogo de aventura de snowboard com gráficos simples e belos.", link: "https://play.google.com/store/apps/details?id=com.noodlecake.altosadventure", image: "https://play-lh.googleusercontent.com/ATmWwFO3rluE-6MCa2xhQpOrERHRM7lqA8sq0p1fUmdF0ISn0ZkYVuIsowcZ1xKQhQI" },
+            { title: "Plants vs Zombies", description: "Um jogo estratégico de defesa de torre com gráficos leves e jogabilidade envolvente.", link: "https://play.google.com/store/apps/details?id=com.popcap.pvz_na", image: "https://play-lh.googleusercontent.com/vM6I9B6Abl2T1J5D-S2iTwZoJ3AZQfQdWg0oMqx0aWKmF4EbzEm2_C9ySTowviP2XA" },
+            { title: "Hill Climb Racing", description: "Um jogo de corrida com física realista e gráficos simples, ideal para dispositivos mais fracos.", link: "https://play.google.com/store/apps/details?id=com.fingersoft.hillclimb", image: "https://play-lh.googleusercontent.com/Fk7xDFKMq81dZylRbBtS0Kw3k8QTMElvQwINQuHHRuMGpKZgChPsd3qyk-fQivA9-WU" },
+            { title: "Asphalt 8: Airborne", description: "Um jogo de corrida com gráficos leves e jogabilidade emocionante.", link: "https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA8HM", image: "https://play-lh.googleusercontent.com/Q4vhAFI1W3t_YnVz0ZY57H_6YoY8vZdfIKh3Rhf4R27jbwJh9FxmKJ6hM4Mk_j8mQY0Q" },
+            // Adicione mais 95 jogos aqui
+        ];
+
+        function displayGames(gamesToDisplay) {
+            const gameList = document.getElementById('game-list');
+            gameList.innerHTML = '';
+
+            gamesToDisplay.forEach(game => {
+                const gameItem = document.createElement('div');
+                gameItem.className = 'game-item';
+
+                const gameImage = document.createElement('img');
+                gameImage.src = game.image;
+                gameImage.alt = game.title;
+                gameItem.appendChild(gameImage);
+
+                const gameInfo = document.createElement('div');
+                gameInfo.innerHTML = `
+                    <h3>${game.title}</h3>
+                    <p>${game.description}</p>
+                    <a href="${game.link}" target="_blank">Baixar Agora</a>
+                `;
+                gameItem.appendChild(gameInfo);
+
+                gameList.appendChild(gameItem);
+            });
+        }
+
+        function filterGames(query) {
+            const filteredGames = games.filter(game => game.title.toLowerCase().includes(query.toLowerCase()));
+            displayGames(filteredGames);
+        }
+
+        document.getElementById('search').addEventListener('input', (e) => {
+            filterGames(e.target.value);
+        });
+
+        // Display all games on page load
+        displayGames(games);
+    </script>
+</body>
+</html>
